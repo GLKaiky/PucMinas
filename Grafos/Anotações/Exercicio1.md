@@ -1,0 +1,1 @@
+Seja G=(V,E) um grafo acíclico, e seja v e V um vértice dado. Encontre a distância de v para todos os vétices u e V. (Faça um algorítmo)
