@@ -1,0 +1,52 @@
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Arquivos temporários do Jupyter
+*/.ipynb_checkpoints/*
+*.nbconvert.ipynb
+
+# Cache do Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Ambientes virtuais
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+*.swp
+
+# Dados grandes (opcional)
+*.csv
+*.tsv
+*.xls
+*.xlsx
+*.h5
+*.hdf5
+*.pickle
+*.pkl
+*.joblib
+*.npy
+*.npz
+
+# Modelos e checkpoints
+*.pt
+*.pth
+*.h5
+*.ckpt
+
+# Arquivos do VSCode (se usar)
+.vscode/

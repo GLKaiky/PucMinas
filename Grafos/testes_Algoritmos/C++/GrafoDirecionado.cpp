@@ -4,6 +4,8 @@
 #include <queue>
 #include <stack>
 
+#include <pair>
+
 using namespace std;
 
 struct PathTrace {
@@ -30,6 +32,30 @@ class GrafoDirecionado {
             }
             
             return reverseAdj; 
+        }
+
+
+        vector<pair<int, int>> DFS(vector<list<int>> adj, vector<pair<int, int>> time ,vector<bool> visited,int startVertice, int index){
+            
+            if(adj[startVertice].empty() || visited[startVertice] == true){
+                return time;
+            }
+
+            visited[startVertice] = true;
+
+            for(int v : adj[startVertice]){
+
+                if(visited[v] == false){
+                    time.push_back({index, DFS(adj, time, visited, v, index++)});
+                    return time.back();
+                } else {
+                    time.push_back({index, index++});
+                    return time.back();
+                }
+                
+            }
+
+
         }
 
     public:
@@ -97,6 +123,8 @@ class GrafoDirecionado {
             cout << order[i] << endl;
         }
     }
+
+    
 
 
 

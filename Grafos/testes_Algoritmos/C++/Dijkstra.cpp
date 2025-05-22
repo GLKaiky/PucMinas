@@ -2,7 +2,7 @@
 #include <vector>
 #include <list>
 #include <limits>
-
+#include <queue>
 #include <stack>
 
 
@@ -59,49 +59,17 @@ class Graph{
         }
     
         void djikstra(int vetInicial){
-            int distance[this->size];
+            vector<int> distance(this->size, numeric_limits<int>::max());
+            vector<int> pi(this->size, -1);
+            vector<bool> visited(this->size, false);
 
-            distance[vetInicial] = 0; //vertice inicial com distância 0
+            distance[vetInicial] = 0;
+            
+            priority_queue<pairEdgeWeight, vector<pairEdgeWeight>, greater<int> > > minHeap;
+            
+            
 
-            for(int i = 0; i<this->size; i++){ //inicializar os demais vertices com distância infinita
-                if(i == vetInicial){
-                    continue; //caso I seja igual ao vertice inicial, ignora pois não deve ser inifinito
-                }
-                distance[i] = numeric_limits<int>::max();
-            }
-
-
-            for(int i = 0; i < this->size; i++){
-                int minSize = numeric_limits<int>::max();
-
-                for(const auto& connection : this->adj[vetInicial]){
-                    
-                    cout << "Conecção para o Vértice: " << connection.edge  << " Com peso " << connection.weight << endl;
-
-                    if((connection.weight + distance[vetInicial]) < distance[connection.edge]){
-
-                        distance[connection.edge] = connection.weight + distance[vetInicial];
-                                                    
-                        if(minSize > distance[connection.edge]){
-                            
-                            minSize = connection.edge;
-                            
-                        }
-
-                    }
-                }
-
-                if(minSize < this->size){
-                    vetInicial = minSize;
-                }
-                            
-            }
-
-            for(int i = 0; i<this->size; i++){
-                cout << distance[i] << endl;
-            }
-
-        }
+        }   
 
         void DFS(int startVertex){
             stack<int> stack;
