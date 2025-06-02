@@ -13,7 +13,7 @@ struct pairEdgeWeight {
     int edge;
 };
 
-class Graph{
+class Graph{ 
 
     private:
         int size;

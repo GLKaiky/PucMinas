@@ -1,5 +1,6 @@
 
 ---
+[Link para os Códigos](https://github.com/GLKaiky/PucMinas/tree/master/Ia/Lista%2010)
 
 # Exercício 1 - Implementação do Algoritmo Perceptron para Funções Lógicas AND, OR e XOR
 
